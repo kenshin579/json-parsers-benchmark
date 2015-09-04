@@ -1,7 +1,6 @@
 package io.gatling.jsonbenchmark.bytes;
 
 import org.boon.IO;
-import org.boon.core.reflection.Reflection;
 
 import java.nio.charset.StandardCharsets;
 
@@ -25,6 +24,14 @@ public class Buffers {
     public static final String STR_WEBXML_BYTES = readStr( "data/webxml.json" );
     public static final String STR_WIDGET_BYTES = readStr( "data/widget.json" );
 
+    //more json files for testing
+    public static final String STR_WEBCALC_ACTION_7MB = readStr( "data/webCalc_7mb.json" );
+    public static final String STR_WEBCALC_ACTION_100KB = readStr( "data/webCalc_100kb.json" );
+
+    public static final String STR_PERSON_255BYTES = readStr( "data/person_255bytes.json" );
+    public static final String STR_PERSON_100KBYTES = readStr( "data/person_100kb.json" );
+    public static final String STR_PERSON_1MBYTES = readStr( "data/person_1mb.json" );
+    public static final String STR_PERSON_5MBYTES = readStr( "data/person_5mb.json" );
 
     public static final char[] CHR_ACTION_LABEL_BYTES = readChars ( "data/actionLabel.json" );
     public static final char[] CHR_CITM_CATALOG_BYTES = readChars ( "data/citm_catalog.json" );

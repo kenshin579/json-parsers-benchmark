@@ -1,14 +1,16 @@
 package io.gatling.jsonbenchmark.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.boon.IO;
+import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
+import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.logic.BlackHole;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+@BenchmarkMode(Mode.AverageTime)
 public class JacksonASTBenchmark {
 
 
@@ -29,44 +31,44 @@ public class JacksonASTBenchmark {
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit ( TimeUnit.SECONDS)
+    @OutputTimeUnit ( TimeUnit.NANOSECONDS)
     public void actionLabel(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_ACTION_LABEL ) );
     }
 
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void citmCatalog(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_CITM_CATALOG ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void medium(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_MEDIUM ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void menu(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_MENU ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void sgml(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_SGML ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void webxml(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_WEBXML ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void widget(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_WIDGET ) );
     }

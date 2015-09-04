@@ -1,9 +1,10 @@
 package io.gatling.jsonbenchmark.file;
 
-import org.boon.json.JsonParser;
 import org.boon.json.JsonParserAndMapper;
 import org.boon.json.JsonParserFactory;
+import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
+import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.logic.BlackHole;
@@ -12,6 +13,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @State
+@BenchmarkMode(Mode.AverageTime)
 public class BoonBenchMark {
 
     public static final String FILE_ACTION_LABEL = ( "data/actionLabel.json" );
@@ -30,44 +32,44 @@ public class BoonBenchMark {
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit ( TimeUnit.SECONDS)
+    @OutputTimeUnit ( TimeUnit.NANOSECONDS)
     public void actionLabel(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_ACTION_LABEL ) );
     }
 
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void citmCatalog(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_CITM_CATALOG ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void medium(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_MEDIUM ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void menu(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_MENU ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void sgml(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_SGML ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void webxml(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_WEBXML ) );
     }
 
     @GenerateMicroBenchmark
-    @OutputTimeUnit(TimeUnit.SECONDS)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public void widget(BlackHole bh) throws Exception {
         bh.consume( parse( FILE_WIDGET ) );
     }

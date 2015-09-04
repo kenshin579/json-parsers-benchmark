@@ -2,16 +2,15 @@
 
 package io.gatling.jsonbenchmark.string;
 
-import static io.gatling.jsonbenchmark.bytes.Buffers.*;
-
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.openjdk.jmh.annotations.GenerateMicroBenchmark;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.logic.BlackHole;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import static io.gatling.jsonbenchmark.bytes.Buffers.*;
 
 public class MainJacksonObjectBenchmark {
 
