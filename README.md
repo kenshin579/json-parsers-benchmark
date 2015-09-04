@@ -3,6 +3,9 @@ Simple opinionated Java for the novice to expert level Java Programmer.
 **Low Ceremony. High Productivity. A real boon to Java to developers!**
 
 
+#History
+2015/9/4 - Added Class Object Mapping Test and Changed Test Mode to AverageTime from Throughput
+
 
 
 Java Boon - Benchmarks
